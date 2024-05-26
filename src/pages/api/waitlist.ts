@@ -13,7 +13,7 @@ export const GET: APIRoute = async () => {
       JSON.stringify({
         message: "Not found",
       }),
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -21,7 +21,7 @@ export const GET: APIRoute = async () => {
     JSON.stringify({
       count: waiting[0].count,
     }),
-    { status: 200 }
+    { status: 200 },
   );
 };
 
@@ -33,7 +33,7 @@ export const POST: APIRoute = async ({ request }) => {
       JSON.stringify({
         message: "Email field required.",
       }),
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -46,7 +46,7 @@ export const POST: APIRoute = async ({ request }) => {
         JSON.stringify({
           message: "error",
         }),
-        { status: 400 }
+        { status: 400 },
       );
     }
   }
@@ -55,6 +55,6 @@ export const POST: APIRoute = async ({ request }) => {
     JSON.stringify({
       message: "success",
     }),
-    { status: 200 }
+    { status: 200 },
   );
 };
