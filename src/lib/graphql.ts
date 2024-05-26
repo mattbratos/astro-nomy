@@ -1,8 +1,8 @@
-import { getSeasonInfo } from "@/lib/utils";
-import type { Airing, Media } from "@/types";
-import { addDays, getUnixTime, subDays } from "date-fns";
+import { getSeasonInfo } from '@/lib/utils';
+import type { Airing, Media } from '@/types';
+import { addDays, getUnixTime, subDays } from 'date-fns';
 
-const graphqlAPI = "https://graphql.anilist.co/";
+const graphqlAPI = 'https://graphql.anilist.co/';
 
 export const getPlanningAnimes = async () => {
   const { season, seasonYear, nextSeason, nextYear } = await getSeasonInfo();
@@ -90,10 +90,10 @@ export const getPlanningAnimes = async () => {
   `;
 
   const response = await fetch(graphqlAPI, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
     },
     body: JSON.stringify({
       query: query,
