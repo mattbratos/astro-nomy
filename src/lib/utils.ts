@@ -1,6 +1,6 @@
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-import { format } from "date-fns";
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import { format } from 'date-fns';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -11,13 +11,13 @@ export function wait(ms: number) {
 }
 
 export function formatDate(date: Date) {
-  return format(date, "LLL dd, y");
+  return format(date, 'LLL dd, y');
 }
 
 export function extractSegmentURL(path: string) {
-  if (!path) return "";
-  if (path === "/") return null;
-  return path.split("/")[1];
+  if (!path) return '';
+  if (path === '/') return null;
+  return path.split('/')[1];
 }
 
 export function capitalizer(text: string) {
@@ -28,35 +28,35 @@ export async function getSeasonInfo() {
   const currentDate = new Date();
   const currentMonth = currentDate.getMonth() + 1;
 
-  let season = "";
+  let season = '';
   let seasonYear = currentDate.getFullYear();
-  let nextSeason = "";
+  let nextSeason = '';
   let nextYear = seasonYear;
 
   switch (currentMonth) {
     case 12:
     case 1:
     case 2:
-      season = "WINTER";
-      nextSeason = "SPRING";
+      season = 'WINTER';
+      nextSeason = 'SPRING';
       break;
     case 3:
     case 4:
     case 5:
-      season = "SPRING";
-      nextSeason = "SUMMER";
+      season = 'SPRING';
+      nextSeason = 'SUMMER';
       break;
     case 6:
     case 7:
     case 8:
-      season = "SUMMER";
-      nextSeason = "FALL";
+      season = 'SUMMER';
+      nextSeason = 'FALL';
       break;
     case 9:
     case 10:
     case 11:
-      season = "FALL";
-      nextSeason = "WINTER";
+      season = 'FALL';
+      nextSeason = 'WINTER';
       if (currentMonth === 11) {
         nextYear++;
       }

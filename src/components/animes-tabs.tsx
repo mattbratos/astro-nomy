@@ -1,12 +1,12 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Icons } from "@/icons";
-import type { Airing, Media } from "@/types";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Icons } from '@/icons';
+import type { Airing, Media } from '@/types';
 import {
   format,
   formatDistanceToNowStrict,
   fromUnixTime,
   isPast,
-} from "date-fns";
+} from 'date-fns';
 
 interface AnimesTabsProps {
   animes: {
@@ -25,33 +25,33 @@ interface TabsTriggerProps {
 
 const tabTriggers: TabsTriggerProps[] = [
   {
-    value: "latestAiring",
-    label: "In Last 24 Hours",
-    icon: "tv",
+    value: 'latestAiring',
+    label: 'In Last 24 Hours',
+    icon: 'tv',
   },
   {
-    value: "futureAiring",
-    label: "Coming Up Next!",
-    icon: "clock",
+    value: 'futureAiring',
+    label: 'Coming Up Next!',
+    icon: 'clock',
   },
-  { value: "trending", label: "Trending", icon: "flame" },
-  { value: "upcomingSeason", label: "Upcoming Season", icon: "calendar" },
+  { value: 'trending', label: 'Trending', icon: 'flame' },
+  { value: 'upcomingSeason', label: 'Upcoming Season', icon: 'calendar' },
 ];
 
 export function AnimesTabs({ animes }: AnimesTabsProps) {
   return (
-    <Tabs defaultValue="latestAiring" className="w-full">
-      <p className="text-sm text-muted-foreground">
+    <Tabs defaultValue='latestAiring' className='w-full'>
+      <p className='text-sm text-muted-foreground'>
         <i>Images aren't optimized.</i>
       </p>
-      <TabsList className="!bg-muted/80 mt-2 mb-4">
+      <TabsList className='!bg-muted/80 mt-2 mb-4'>
         {tabTriggers.map((tab) => {
-          const Icon = Icons[tab.icon || "flame"];
+          const Icon = Icons[tab.icon || 'flame'];
           return (
             <TabsTrigger key={tab.value} value={tab.value}>
-              <div className="flex gap-x-2 items-center">
-                <Icon className="size-5" />
-                <span className="hidden sm:inline-flex">{tab.label}</span>
+              <div className='flex gap-x-2 items-center'>
+                <Icon className='size-5' />
+                <span className='hidden sm:inline-flex'>{tab.label}</span>
               </div>
             </TabsTrigger>
           );
@@ -60,9 +60,9 @@ export function AnimesTabs({ animes }: AnimesTabsProps) {
 
       {Object.entries(animes).map(([key, value]) => (
         <TabsContent key={key} value={key}>
-          <div className="anime-grid">
+          <div className='anime-grid'>
             {value.map((anime, i) => (
-              <AnimeCard key={key + "-" + i} data={anime} />
+              <AnimeCard key={key + '-' + i} data={anime} />
             ))}
           </div>
         </TabsContent>
@@ -74,7 +74,7 @@ export function AnimesTabs({ animes }: AnimesTabsProps) {
 function AnimeCard({ data }: { data: Media | Airing }) {
   let media, airingAt, episode;
 
-  if ("media" in data) {
+  if ('media' in data) {
     media = data.media;
     airingAt = data.airingAt;
     episode = data.episode;
@@ -83,30 +83,30 @@ function AnimeCard({ data }: { data: Media | Airing }) {
   }
 
   return (
-    <div className="flex flex-col w-full">
-      <div className="w-full h-[280px] rounded-md overflow-hidden bg-muted-foreground/15">
+    <div className='flex flex-col w-full'>
+      <div className='w-full h-[280px] rounded-md overflow-hidden bg-muted-foreground/15'>
         <img
           width={260}
           height={300}
-          loading="eager"
-          className="size-full object-cover object-center"
+          loading='eager'
+          className='size-full object-cover object-center'
           src={media.coverImage.extraLarge}
           alt={media.title.userPreferred}
         />
       </div>
 
-      <div className="flex w-full flex-col justify-center">
-        <p className="font-medium text-sm text-balance line-clamp-1 mt-1 text-foreground">
+      <div className='flex w-full flex-col justify-center'>
+        <p className='font-medium text-sm text-balance line-clamp-1 mt-1 text-foreground'>
           {media.title.userPreferred}
         </p>
 
         {airingAt && episode ? (
-          <p className="flex text-xs sm:text-[13px] font-medium text-muted-foreground line-clamp-1">
+          <p className='flex text-xs sm:text-[13px] font-medium text-muted-foreground line-clamp-1'>
             {isPast(fromUnixTime(airingAt))
               ? formatDistanceToNowStrict(fromUnixTime(airingAt), {
                   addSuffix: true,
                 })
-              : format(fromUnixTime(airingAt), "p")}
+              : format(fromUnixTime(airingAt), 'p')}
             &nbsp; • &nbsp;Ep. {episode}
           </p>
         ) : null}
