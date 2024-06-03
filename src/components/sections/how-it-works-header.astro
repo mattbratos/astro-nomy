@@ -1,0 +1,24 @@
+---
+import { cn } from '@/lib/utils';
+import type { InfoLdg } from '@/types';
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import HeaderSection from './header-section.astro';
+
+interface Props {
+  reverse?: boolean;
+  data: InfoLdg;
+}
+
+const { reverse, data } = Astro.props;
+---
+
+<div class=''>
+  <div class='container max-w-6xl'>
+    <HeaderSection
+      label='How it works'
+      title='Order your Twiin Today.'
+      subtitle='It takes only 5 minutes.'
+    />
+  </div>
+</div>

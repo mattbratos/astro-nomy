@@ -1,0 +1,80 @@
+---
+import { buttonVariants } from '@/components/ui/button';
+import MainLayout from '@/layouts/main-layout.astro';
+import { cn } from '@/lib/utils';
+import { Icon } from 'astro-icon/components';
+---
+
+<MainLayout title='AI 3D Figure Creator' mainClass='flex-1 bg-background-200'>
+  <section
+    class='container flex flex-col gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24'
+  >
+    <div class='mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]'>
+      <h2 class='font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl'>
+        Create Your Own 3D Figures with AI
+      </h2>
+      <p
+        class='max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7'
+      >
+        Upload a photo and let our AI generate a stunning 3D figure for you.
+      </p>
+    </div>
+    <div
+      class='grid w-full items-start gap-10 rounded-3xl overflow-hidden border p-10 bg-background'
+    >
+      <div class='grid gap-6'>
+        <h3 class='text-xl font-bold sm:text-2xl'>How It Works</h3>
+        <ul class='grid gap-3 text-sm text-muted-foreground sm:grid-cols-2'>
+          <li class='flex items-center'>
+            <Icon name='lucide:check' class='mr-2 size-4' /> Upload Your Photo
+          </li>
+          <li class='flex items-center'>
+            <Icon name='lucide:check' class='mr-2 size-4' /> AI Generates 3D Model
+          </li>
+          <li class='flex items-center'>
+            <Icon name='lucide:check' class='mr-2 size-4' /> Preview Your Figure
+          </li>
+          <li class='flex items-center'>
+            <Icon name='lucide:check' class='mr-2 size-4' /> Download or Order Print
+          </li>
+          <li class='flex items-center'>
+            <Icon name='lucide:check' class='mr-2 size-4' /> Customize Your Model
+          </li>
+          <li class='flex items-center'>
+            <Icon name='lucide:check' class='mr-2 size-4' /> Secure and Private
+          </li>
+        </ul>
+      </div>
+      <div class='flex flex-col gap-4 text-center'>
+        <form class='flex flex-col gap-4 items-center'>
+          <label for='upload' class='block text-lg font-medium text-gray-700'>
+            Upload Your Photo
+          </label>
+          <div
+            class='relative border-2 border-dashed border-gray-300 rounded-lg w-full h-64 flex items-center justify-center cursor-pointer hover:border-gray-400'
+          >
+            <input
+              type='file'
+              id='upload'
+              name='upload'
+              accept='image/*'
+              class='absolute inset-0 opacity-0 cursor-pointer'
+            />
+            <div
+              class='flex flex-col items-center justify-center text-gray-500'
+            >
+              <Icon name='lucide:upload' class='size-12 mb-2' />
+              <span>Click to upload your image</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class='mx-auto flex w-full max-w-[58rem] flex-col gap-4'>
+      <p class='max-w-[85%] leading-normal text-muted-foreground sm:leading-7'>
+        This is a demo service.{' '}
+        <strong>You can test the feature and won&apos;t be charged.</strong>
+      </p>
+    </div>
+  </section>
+</MainLayout>

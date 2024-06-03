@@ -42,7 +42,7 @@ export function AnimesTabs({ animes }: AnimesTabsProps) {
   return (
     <Tabs defaultValue='latestAiring' className='w-full'>
       <p className='text-sm text-muted-foreground'>
-        <i>Images aren't optimized.</i>
+        {/* <i>Images aren't optimized.</i> */}
       </p>
       <TabsList className='!bg-muted/80 mt-2 mb-4'>
         {tabTriggers.map((tab) => {
@@ -84,10 +84,10 @@ function AnimeCard({ data }: { data: Media | Airing }) {
 
   return (
     <div className='flex flex-col w-full'>
-      <div className='w-full h-[280px] rounded-md overflow-hidden bg-muted-foreground/15'>
+      <div className='w-full h-[500px] rounded-md overflow-hidden bg-muted-foreground/15'>
         <img
-          width={260}
-          height={300}
+          width={500}
+          height={500}
           loading='eager'
           className='size-full object-cover object-center'
           src={media.coverImage.extraLarge}
@@ -95,7 +95,7 @@ function AnimeCard({ data }: { data: Media | Airing }) {
         />
       </div>
 
-      <div className='flex w-full flex-col justify-center'>
+      {/* <div className='flex w-full flex-col justify-center'>
         <p className='font-medium text-sm text-balance line-clamp-1 mt-1 text-foreground'>
           {media.title.userPreferred}
         </p>
@@ -110,7 +110,7 @@ function AnimeCard({ data }: { data: Media | Airing }) {
             &nbsp; • &nbsp;Ep. {episode}
           </p>
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 }

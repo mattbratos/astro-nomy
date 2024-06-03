@@ -1,14 +1,14 @@
 ---
-import Footer from "@/components/layout/footer.astro";
-import Header from "@/components/layout/header.astro";
-import { MainNavigationMenu } from "@/components/main-navigation-menu";
-import { cn } from "@/lib/utils";
-import BaseLayout from "./base-layout.astro";
-import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
-import { navMenuConfig } from "@/config/nav-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { siteConfig } from "@/config/site";
-import { Icon } from "astro-icon/components";
+import Footer from '@/components/layout/footer.astro';
+import Header from '@/components/layout/header.astro';
+import { MainNavigationMenu } from '@/components/main-navigation-menu';
+import { cn } from '@/lib/utils';
+import BaseLayout from './base-layout.astro';
+import { SheetMobileNav } from '@/components/layout/sheet-mobile-nav';
+import { navMenuConfig } from '@/config/nav-menu';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { siteConfig } from '@/config/site';
+import { Icon } from 'astro-icon/components';
 // import { marketingConfig } from "@/config/marketing";
 // import MainNav from "@/components/layout/main-nav.astro";
 
@@ -22,7 +22,7 @@ const { title, description, mainClass } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
-  <Header className="border-b">
+  <Header className='border-b'>
     <!-- if using only normals links  -->
     <!-- <MainNav items={marketingConfig.mainNav} slot="left-header" />
     <SheetMobileNav
@@ -32,27 +32,27 @@ const { title, description, mainClass } = Astro.props;
     /> -->
 
     <!-- if use Navigation Menu on desktop -->
-    <MainNavigationMenu slot="left-header" client:load />
+    <MainNavigationMenu slot='left-header' client:load />
     <SheetMobileNav
       mainNavItems={[...navMenuConfig.links]}
       sidebarNavItems={[
         ...navMenuConfig.pagesNav,
         ...navMenuConfig.examplesNav,
       ]}
-      slot="mobile-nav-header"
+      slot='mobile-nav-header'
       client:load
     />
 
-    <div class="flex items-center gap-x-4" slot="right-header">
-      <a
+    <div class='flex items-center gap-x-4' slot='right-header'>
+      <!-- <a
         href={siteConfig.links.github}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="github"
+        target='_blank'
+        rel='noreferrer'
+        aria-label='github'
       >
-        <Icon name="github" class="size-[22px]" />
-      </a>
-      <ThemeToggle client:load />
+        <Icon name='github' class='size-[22px]' />
+      </a> -->
+      <!-- <ThemeToggle client:load /> -->
     </div>
   </Header>
 
@@ -60,5 +60,5 @@ const { title, description, mainClass } = Astro.props;
     <slot />
   </main>
 
-  <Footer />
+  <Footer className='mt-24' />
 </BaseLayout>

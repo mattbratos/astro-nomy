@@ -2,10 +2,10 @@ import type { InfoLdg } from '@/types';
 
 export const infos: InfoLdg[] = [
   {
-    title: 'Empower your projects',
+    title: 'Upload a photo',
     description:
       'Unlock the full potential of your projects with our open-source SaaS platform. Collaborate seamlessly, innovate effortlessly, and scale limitlessly.',
-    image: '/images/blog/placeholder-about.jpg',
+    image: '/images/harry-selfie.png',
     list: [
       {
         title: 'Collaborative',
@@ -26,10 +26,35 @@ export const infos: InfoLdg[] = [
     ],
   },
   {
-    title: 'Seamless Integration',
+    title: 'Let AI do its magic',
     description:
       'Integrate our open-source SaaS seamlessly into your existing workflows. Effortlessly connect with your favorite tools and services for a streamlined experience.',
-    image: '/images/blog/placeholder-about.jpg',
+    image: '/images/magic2.webp',
+    list: [
+      {
+        title: 'Flexible',
+        description:
+          'Customize your integrations to fit your unique requirements.',
+        icon: 'lucide:laptop',
+      },
+      {
+        title: 'Efficient',
+        description: 'Streamline your processes and reducing manual effort.',
+        icon: 'lucide:search',
+      },
+      {
+        title: 'Reliable',
+        description:
+          'Rely on our robust infrastructure and comprehensive documentation.',
+        icon: 'lucide:settings',
+      },
+    ],
+  },
+  {
+    title: 'Order a 3D figure of yourself',
+    description:
+      'Integrate our open-source SaaS seamlessly into your existing workflows. Effortlessly connect with your favorite tools and services for a streamlined experience.',
+    image: '/images/harry.webp',
     list: [
       {
         title: 'Flexible',

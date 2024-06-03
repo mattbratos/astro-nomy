@@ -97,12 +97,32 @@ export const navMenuConfig: NavMenuConfig = {
       ],
     },
   ],
+
   links: [
     // {
-    //   title: "Example",
-    //   href: "/example",
-    //   description: "Example description",
-    //   image: "/images/examples/image.jpg",
+    //   title: 'Showcase',
+    //   href: '/animes',
+    //   description: 'Example description',
+    //   // image: '/images/examples/image.jpg',
     // },
+    //
+    {
+      title: 'Creator',
+      href: '/creator',
+      description: 'Example description',
+      // image: '/images/examples/image.jpg',
+    },
+    {
+      title: 'About Us',
+      href: '/about',
+      description: 'Example description',
+      image: '/images/examples/image.jpg',
+    },
+    {
+      title: 'Contact',
+      href: '/contact',
+      description: 'Example description',
+      // image: '/images/examples/image.jpg',
+    },
   ],
 };

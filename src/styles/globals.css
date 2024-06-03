@@ -197,5 +197,26 @@
 }
 
 .anime-grid {
-  @apply grid content-start [--column-gap:12px] sm:[--column-gap:14px] md:[--column-gap:18px] gap-x-[--column-gap] gap-y-8 md:gap-y-10 [--min-column-width:150px] [--max-column-count:7] [--total-gap-width:calc((var(--max-column-count)-1)*var(--column-gap))] [--max-column-width:calc((100%-var(--total-gap-width))/var(--max-column-count))] grid-cols-[repeat(auto-fill,minmax(max(var(--min-column-width),var(--max-column-width)),1fr))];
+  display: grid;
+
+  /* Mobile */
+  gap: 12px;
+  grid-template-columns: repeat(1, 1fr);
+
+  /* Small screens */
+  @media (min-width: 640px) {
+    gap: 14px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Medium screens and above */
+  @media (min-width: 1200px) {
+    gap: 18px;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
